@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script src="java.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Depot Paint Visualizer</title>
+  </head>
+  <body>
+    <!-- AI Helper Homer -->
+    <div class="homer-container">
+      <div class="homer-circle" id="homer-circle">
+        <img src="homer.png" alt="Homer AI Helper">
+      </div>
+      <div class="homer-tooltip">Homer</div>
+    </div>
+
+    <!-- Homer Chat Popup -->
+    <div class="homer-popup" id="homer-popup">
+      <div class="homer-popup-content">
+        <button class="homer-close" id="homer-close">&times;</button>
+        <div class="homer-message" id="homer-message">
+          <p>Hey, my name is Homer, did you need help with anything?</p>
+          <div class="homer-buttons">
+            <button class="homer-btn" id="help-btn">I need help seeing what would work best for my room</button>
+            <button class="homer-btn" id="info-btn">What is this?</button>
+            <button class="homer-btn" id="info2-btn">What's this for?</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TITLE -->
+    <div class="header-anchor"></div>
+    <div class="title">
+      <h1>Room Visualizer</h1>
+    </div>
+    
+    <!-- Sidebar Container -->
+    <div class="sidebar-container">
+    <div id="sidebar1">
+      <h1>Paint Selection</h1>
+      <p style="align-items: center; width: 50%; margin: 0 auto;">From PPG - Glidden catalogue</p>
+      <div class="paint-grid">
+        <div class="swatch" style="background-color: #86423e;" data-name="Brick Dust"></div>
+        <div class="swatch" style="background-color: #773023;" data-name="Warm Mahogany"></div>
+        <div class="swatch" style="background-color: #d3bc9b;" data-name="Pony Tail"></div>
+
+        <div class="swatch" style="background-color: #ab9378;" data-name="Sauteed Mushroom"></div>
+        <div class="swatch" style="background-color: #415241;" data-name="Pine Forest"></div>
+        <div class="swatch" style="background-color: #3c4f4e;" data-name="Night Watch"></div>
+
+        <div class="swatch" style="background-color: #7b8f99;" data-name="Chalky Blue"></div>
+        <div class="swatch" style="background-color: #3f4c5a;" data-name="Cavalry"></div>
+        <div class="swatch" style="background-color: #4a6871;" data-name="Azalea Leaf"></div>
+
+        <div class="swatch" style="background-color: #604046;" data-name="Gooseberry"></div>
+        <div class="swatch" style="background-color: #5c4450;" data-name="Purple Basil"></div>
+        <div class="swatch" style="background-color: #5c5d5d;" data-name="Knights Armour"></div>
+
+        <div class="swatch" style="background-color: #848485;" data-name="Dover Gray"></div>
+        <div class="swatch" style="background-color: #5b4c44;" data-name="Sarsaparilla"></div>
+        <div class="swatch" style="background-color: #414040;" data-name="Black Magic"></div>
+      </div>
+    </div>
+    <div id="sidebar2">
+      <!-- Color info section -->
+      <div class="color-info">
+        <div class="current-color-label">Current Color:</div>
+        <div class="current-color-display">
+          <span id="current-color-name">Select a color</span>
+        </div>
+        <div class="recent-colors-label">Recently Used:</div>
+        <div class="recent-colors" id="recent-colors">
+          <!-- Recent colors will be added here dynamically -->
+        </div>
+      </div>
+
+      <!-- Carousel with color preview background -->
+      <div class="carousel-container">
+        <div class="color-preview" id="color-preview"></div>
+        <div class="carousel">
+          <button class="btn prev" onclick="moveSlide(-1)">❮</button>
+          <div class="carousel-track-container">
+            <div class="carousel-track">
+              <img src="bedroom1.webp" alt="Slide 1">
+              <img src="bedroom2.webp" alt="Slide 2">
+              <img src="bedroom3.webp" alt="Slide 3">
+            </div>
+          </div>
+          <button class="btn next" onclick="moveSlide(1)">❯</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div> <!-- End sidebar-container -->
+    
+    <!-- Footer -->
+    <div class="footer">
+      <p>Home Depot Paint Visualizer - Designed by Milo McMillen, not officially endorsed or affiliated with Home Depot. © 2000-2026 Home Depot. All Rights Reserved.</p>
+    </div>
+  </body>
+</html>
