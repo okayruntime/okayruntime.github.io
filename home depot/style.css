@@ -554,3 +554,327 @@ body {
     opacity: 0;
     visibility: hidden; /* Ensures it no longer affects layout or interaction */
 }
+
+/* ========================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   ======================================== */
+
+/* Tablet and smaller laptops (1024px and below) */
+@media screen and (max-width: 1024px) {
+    .title h1 {
+        font-size: 50px;
+        width: 40%;
+        padding: 20px;
+        padding-top: 30px;
+    }
+
+    .sidebar-container {
+        margin-top: 150px;
+        gap: 10px;
+    }
+
+    #sidebar1 {
+        width: 40%;
+        margin: 15px;
+        padding: 5px;
+        min-height: 700px;
+    }
+
+    #sidebar1 h1 {
+        font-size: 36px;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    #sidebar2 {
+        width: 55%;
+        margin: 15px;
+        padding: 30px;
+        padding-left: 20px;
+        min-height: 700px;
+    }
+
+    .carousel-container {
+        width: 450px;
+        height: 450px;
+    }
+
+    .carousel {
+        width: 450px;
+        height: 450px;
+    }
+
+    .carousel-track img {
+        width: 450px;
+        height: 450px;
+    }
+
+    .paint-grid {
+        gap: 10px;
+        margin: 20px auto;
+    }
+
+    .swatch {
+        height: 100px;
+        margin: 8px;
+    }
+}
+
+/* Small tablets and large phones (768px and below) */
+@media screen and (max-width: 768px) {
+    .title h1 {
+        font-size: 40px;
+        width: 60%;
+        padding: 15px;
+        padding-top: 25px;
+    }
+
+    .sidebar-container {
+        flex-direction: column;
+        margin-top: 140px;
+    }
+
+    #sidebar1, #sidebar2 {
+        width: 90%;
+        margin: 15px auto;
+        min-height: auto;
+    }
+
+    #sidebar1 {
+        padding: 10px;
+    }
+
+    #sidebar1 h1 {
+        font-size: 32px;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    #sidebar2 {
+        padding: 25px;
+    }
+
+    .carousel-container {
+        width: 100%;
+        max-width: 400px;
+        height: 400px;
+    }
+
+    .carousel {
+        width: 100%;
+        max-width: 400px;
+        height: 400px;
+    }
+
+    .carousel-track img {
+        width: 400px;
+        height: 400px;
+    }
+
+    .paint-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin: 15px auto;
+        max-width: 100%;
+    }
+
+    .swatch {
+        height: 80px;
+        margin: 5px;
+    }
+
+    .homer-popup {
+        width: 320px;
+        right: 15px;
+        bottom: 120px;
+    }
+
+    .footer p {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+}
+
+/* Mobile phones (480px and below) */
+@media screen and (max-width: 480px) {
+    .title h1 {
+        font-size: 28px;
+        width: 80%;
+        padding: 12px;
+        padding-top: 18px;
+    }
+
+    .sidebar-container {
+        margin-top: 120px;
+    }
+
+    .sidebar-container.title-hidden {
+        margin-top: 20px;
+    }
+
+    #sidebar1, #sidebar2 {
+        width: 95%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    #sidebar1 h1 {
+        font-size: 28px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 15px;
+    }
+
+    #sidebar1 p {
+        width: 80%;
+        font-size: 14px;
+    }
+
+    .paint-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin: 15px auto;
+        padding: 0 10px;
+    }
+
+    .swatch {
+        height: 100px;
+        margin: 5px;
+    }
+
+    .swatch::after {
+        font-size: 10px;
+        padding: 3px 6px;
+        bottom: -25px;
+    }
+
+    .color-info {
+        padding: 15px;
+    }
+
+    .current-color-label {
+        font-size: 20px;
+    }
+
+    .current-color-display {
+        padding: 12px;
+    }
+
+    #current-color-name {
+        font-size: 16px;
+    }
+
+    .recent-colors-label {
+        font-size: 18px;
+    }
+
+    .recent-color-swatch {
+        width: 50px;
+        height: 50px;
+    }
+
+    .carousel-container {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+    }
+
+    .carousel {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+    }
+
+    .carousel-track img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .btn {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .homer-container {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .homer-circle {
+        width: 60px;
+        height: 60px;
+        border: 3px solid white;
+    }
+
+    .homer-tooltip {
+        bottom: 70px;
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .homer-popup {
+        width: calc(100vw - 40px);
+        right: 10px;
+        bottom: 90px;
+        max-width: 320px;
+    }
+
+    .homer-popup-content {
+        padding: 20px;
+    }
+
+    .homer-message p {
+        font-size: 14px;
+    }
+
+    .homer-btn {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    .footer {
+        padding: 20px 10px;
+        margin-top: 40px;
+    }
+
+    .footer p {
+        font-size: 11px;
+    }
+}
+
+/* Extra small phones (360px and below) */
+@media screen and (max-width: 360px) {
+    .title h1 {
+        font-size: 24px;
+        padding: 10px;
+        padding-top: 15px;
+    }
+
+    #sidebar1 h1 {
+        font-size: 24px;
+    }
+
+    .paint-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .swatch {
+        height: 80px;
+    }
+
+    .carousel-container,
+    .carousel {
+        max-width: 260px;
+        height: 260px;
+    }
+
+    .carousel-track img {
+        width: 260px;
+        height: 260px;
+    }
+
+    .homer-popup {
+        width: calc(100vw - 30px);
+    }
+}
