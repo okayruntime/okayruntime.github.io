@@ -5,22 +5,40 @@ window.addEventListener("scroll", () => {
     const headerElement = document.querySelector('.title');
     const sidebarContainer = document.querySelector('.sidebar-container');
 
-    if (currentScrollTop > 50) { // Threshold before it hides
+    // Adjust scroll threshold based on screen size
+    const threshold = window.innerWidth <= 768 ? 30 : 50;
+    const marginTopVisible = window.innerWidth <= 480 ? "120px" : (window.innerWidth <= 768 ? "140px" : "180px");
+    const marginTopHidden = "20px";
+
+    if (currentScrollTop > threshold) {
         headerElement.classList.add('slide-up');
-        // Move sidebar container up to fill the gap
         if (sidebarContainer) {
-            sidebarContainer.style.marginTop = "20px";
+            sidebarContainer.style.marginTop = marginTopHidden;
+            sidebarContainer.classList.add('title-hidden');
         }
     } else {
         headerElement.classList.remove('slide-up');
-        // Move it back down
         if (sidebarContainer) {
-            sidebarContainer.style.marginTop = "180px";
+            sidebarContainer.style.marginTop = marginTopVisible;
+            sidebarContainer.classList.remove('title-hidden');
         }
     }
 
     lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
 }, { passive: true });
+
+// Adjust margins on window resize
+window.addEventListener('resize', () => {
+    const sidebarContainer = document.querySelector('.sidebar-container');
+    const headerElement = document.querySelector('.title');
+    const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
+    const threshold = window.innerWidth <= 768 ? 30 : 50;
+
+    if (sidebarContainer && !headerElement.classList.contains('slide-up') && currentScrollTop <= threshold) {
+        const marginTopVisible = window.innerWidth <= 480 ? "120px" : (window.innerWidth <= 768 ? "140px" : "180px");
+        sidebarContainer.style.marginTop = marginTopVisible;
+    }
+});
 
 // carousel code
 
@@ -38,6 +56,39 @@ function moveSlide(step) {
   track.style.transform = `translateX(-${index * 100}%)`;
 }
 
+// Touch support for carousel on mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('.carousel');
+  
+  if (carousel) {
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+  }
+});
+
+function handleSwipe() {
+  const swipeThreshold = 50;
+  const diff = touchStartX - touchEndX;
+  
+  if (Math.abs(diff) > swipeThreshold) {
+    if (diff > 0) {
+      // Swipe left - next slide
+      moveSlide(1);
+    } else {
+      // Swipe right - previous slide
+      moveSlide(-1);
+    }
+  }
+}
 
 // color changing code
 
