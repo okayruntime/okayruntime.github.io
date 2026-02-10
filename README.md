@@ -12,3 +12,5 @@ it shows off the capabilities of the aformentioned website i have created, which
 and lwk, thats probably it, but i put a lot of time into it so look into it...okay?
 
 general blah blah blah please dont steal ok? thanks man.... also if you use this in anything idc just dont claim it as your own except if you are home depot then email me
+
+i will say though the screen dimensions are weird, and you will hopefully be able to upload your own image, i might try to make a system you can use to upload it, but idk....
